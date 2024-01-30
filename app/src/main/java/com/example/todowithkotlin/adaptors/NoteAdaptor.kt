@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todowithkotlin.Note
 import com.example.todowithkotlin.R
 
-class NoteAdaptor(val context: Context, val noteList: MutableList<Note>) : RecyclerView.Adapter<NoteAdaptor.NoteViewHolder>(){
+class NoteAdaptor() : RecyclerView.Adapter<NoteAdaptor.NoteViewHolder>(){
 
-
+    private val noteList: MutableList<Note> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        return NoteViewHolder(LayoutInflater.from(context).inflate(R.layout.note_item, parent, false))
+        return NoteViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.note_item, parent, false))
     }
 
     override fun getItemCount() = noteList.size
