@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey
 data class Note(
     val title: String,
     val description: String,
-    val priority: Int
+    val priority: String
 ){
     @PrimaryKey(autoGenerate = true)
-    val id = 0
+    var id = 0
 }

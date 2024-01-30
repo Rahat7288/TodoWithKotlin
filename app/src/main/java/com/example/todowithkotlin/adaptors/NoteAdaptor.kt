@@ -1,5 +1,6 @@
 package com.example.todowithkotlin.adaptors
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -25,8 +26,10 @@ class NoteAdaptor() : RecyclerView.Adapter<NoteAdaptor.NoteViewHolder>(){
         holder.textViewPriority.text = note.priority.toString()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setNotes(notes: MutableList<Note>){
         noteList = notes
+        notifyDataSetChanged()
 
     }
 
