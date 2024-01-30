@@ -11,7 +11,7 @@ import com.example.todowithkotlin.R
 
 class NoteAdaptor() : RecyclerView.Adapter<NoteAdaptor.NoteViewHolder>(){
 
-    private val noteList: MutableList<Note> = mutableListOf()
+    private var noteList: MutableList<Note> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         return NoteViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.note_item, parent, false))
     }
@@ -23,6 +23,11 @@ class NoteAdaptor() : RecyclerView.Adapter<NoteAdaptor.NoteViewHolder>(){
         holder.textTitle.text = note.title
         holder.textViewDescription.text = note.description
         holder.textViewPriority.text = note.priority.toString()
+    }
+
+    fun setNotes(notes: MutableList<Note>){
+        noteList = notes
+
     }
 
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
