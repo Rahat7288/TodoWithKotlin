@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         noteViewModel.allNote.observe(this){
 //            here we can add our data to our recycleView
-            list ->
+//            list ->
 
         }
     }
